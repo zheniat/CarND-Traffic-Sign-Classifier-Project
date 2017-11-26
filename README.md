@@ -94,7 +94,7 @@ Pedestrians  | Traffic signals | General Caution
 ![alt text](images/pedestrians.png)  | ![alt text](images/traffic_signals.png) | ![alt text](images/general_caution.png)
 
 
-Higher resolution of images would likely prevent this problem.
+Higher resolution of images would likely have prevented this problem.
 
 Below are the results of the predictions and weights given top five probabilities:
 
