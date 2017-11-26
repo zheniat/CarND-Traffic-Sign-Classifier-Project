@@ -19,8 +19,8 @@ Here is an exploratory visualization of the data set. The graph shows distributi
 
 Samples are distributed largely evenly across all three data sets, except for labels in the 19-24 range (Dangerous Curve Left & Right, Double Curve, Bumpy Road Slippery Road, Road Narrows on Right) where the validation set has more samples that training and test sets.
 
-##Design and Test a Model Architecture
-###Image Pre-Processing
+## Design and Test a Model Architecture
+### Image Pre-Processing
 My first step was to increase the training data 5 folds by perturbing the images in the training dataset using the skimage library. Each image was 4 times randomly:
 * rotated between -10 and 10 degrees
 * translated between -3 and 3 pixels in all directions
@@ -40,7 +40,7 @@ Example of original and normalized images:
 I then converted the images to grayscale. Example of original and normalized grayscale images:
 ![alt text](images/normalizedgrayscale.png)
 
-###Model architecture
+### Model architecture
 Final model consisted of the following layers:
 
 | Layer         		|     Description	        					|
@@ -77,7 +77,7 @@ Increasing the batch size did not improve accuracy and the model took longer to 
 
 The resulted model performed well on the test data resulting in the accuracy of 0.966
 
-##Testing the Model on New Images
+## Testing the Model on New Images
 Here are eight German traffic signs that I found on the web:
 ![alt text](images/web_original.png)
 
