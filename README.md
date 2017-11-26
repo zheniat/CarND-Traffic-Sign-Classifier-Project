@@ -28,6 +28,7 @@ My first step was to increase the training data 5 folds by perturbing the images
 * sheared between -15 and 15 degrees
 
 Example of original and perturbed images:
+
 ![alt text](images/original_perturbed.png)
 
 Perturbed images were added to the training data set, after which the combined data set was shuffled.
@@ -35,9 +36,11 @@ Perturbed images were added to the training data set, after which the combined d
 Every image in the training data set was normalized to ensure uniform contrast. This was done using the Pillow library.
 
 Example of original and normalized images:
+
 ![alt text](images/normalized.png)
 
 I then converted the images to grayscale. Example of original and normalized grayscale images:
+
 ![alt text](images/normalizedgrayscale.png)
 
 ### Model architecture
@@ -79,9 +82,11 @@ The resulted model performed well on the test data resulting in the accuracy of 
 
 ## Testing the Model on New Images
 Here are eight German traffic signs that I found on the web:
+
 ![alt text](images/web_original.png)
 
 The model was able to predict 7 out 8 signs, which gives an accuracy of 0.875. The only sign the model struggled with is Pedestrians. Pedestrians is a triangular sign with a picture of a person inside. The model confused the sign with similar looking triangular signs with pictures, such as Traffic Signals and General Caution. Higher resolution of images would likely prevent this problem.
 
 Below are the results of the predictions and weights given top five probabilities:
+
 ![alt text](images/web_predictions.png)
