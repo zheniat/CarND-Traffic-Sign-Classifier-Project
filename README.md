@@ -63,14 +63,16 @@ Final model consisted of the following layers:
 |Fully connected | input 84, output 43 |
 |Softmax | one hot vector size 43|
 
-To train the model I used the AdamOptimizer with a batch size of 256, 1000 epochs, and 0.0003 starting learning rate.
+To train the model I used the AdamOptimizer with a batch size of 256, 2000 epochs, and 0.0003 starting learning rate.
 
 My final model results were:
 * training set accuracy:0.99
 * test set accuracy:0.966
 
 
-I started with the default configuration of 2 conv layers and 2 fully connected layers and without fake images, which resulted in the accuracy of 0.89. In order to reduce overfitting I added dropouts, which increased accuracy to 0.92. Adding an extra connected layer and max pooling increased learning capability and further reduced overfitting, leading to the accuracy of 0.95. Adding local response normalization did not make any difference and so I removed this feature. Next I increased the model to 3 conv layers and 3 fully connected layers, which increased accuracy to 0.97. Adding 4 conv layers and 3 fully connected layers did not make any difference. With each change, I trained the model with different batch sizes (256, 512) trying epochs between 500 to 2000 as needed.
+I started with the default configuration of 2 conv layers and 2 fully connected layers and without fake images, which resulted in the accuracy of 0.89. In order to reduce overfitting I added dropouts, which increased accuracy to 0.92. Adding an extra connected layer and max pooling increased learning capability and further reduced overfitting, leading to the accuracy of 0.95. Adding local response normalization did not make any difference and so I removed this feature. Next I increased the model to 3 conv layers and 3 fully connected layers, which increased accuracy to 0.97. Adding 4 conv layers and 3 fully connected layers did not make any difference. I then added fake images increasing the training set 5x.
+
+With each change, I trained the model with different batch sizes (256, 512) trying epochs between 500 to 2000 as needed.
 
 I also ran the model on full color images. This decreased validation accuracy to 0.973 resulting in test data accuracy to 0.94 and image from the web accuracy of 0.75.
 
@@ -85,7 +87,14 @@ Here are eight German traffic signs that I found on the web:
 
 ![alt text](images/web_original.png)
 
-The model was able to predict 7 out 8 signs, which gives an accuracy of 0.875. The only sign the model struggled with is Pedestrians. Pedestrians is a triangular sign with a picture of a person inside. The model confused the sign with similar looking triangular signs with pictures, such as Traffic Signals and General Caution. Higher resolution of images would likely prevent this problem.
+The model was able to predict 7 out 8 signs, which gives an accuracy of 0.875. The only sign the model struggled with is Pedestrians. Pedestrians is a triangular sign with a picture of a person inside. The model confused the sign with similar looking triangular signs with pictures, such as Traffic Signals and General Caution:
+
+Pedestrians  | Traffic signals | General Caution
+------------- | ------------- | -------------
+![alt text](images/pedestrians.png)  | ![alt text](images/traffic_signals.png) | ![alt text](images/general_caution.png)
+
+
+Higher resolution of images would likely prevent this problem.
 
 Below are the results of the predictions and weights given top five probabilities:
 
